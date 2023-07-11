@@ -38,5 +38,9 @@ public class RegisterTest {
         Select selectSkills = new Select(driver.findElement(By.id("Skills")));
 
         selectSkills.selectByValue("SQL");
+
+        //Realizando Upload de arquivo
+        WebElement upload =  driver.findElement(By.id("imagesrc"));
+        upload.sendKeys("C:\\Users\\user\\Pictures\\imagemjpg.jpg");
     }
 }

@@ -1,8 +1,11 @@
+import io.netty.channel.epoll.EpollServerChannelConfig;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+
+import javax.swing.*;
 
 public class RegisterTest {
 
@@ -25,8 +28,15 @@ public class RegisterTest {
         js.executeScript("window.scroll(0,250);");
 
         driver.findElement(By.xpath("//a[@class='ui-corner-all' and text()='Portuguese']")).click();
+        WebElement esq = driver.findElement(By.id("msdd"));
+        new Actions(driver).sendKeys(Keys.ENTER);
+
 
         //Scrolando para cima
-        js.executeScript("window.scroll(0, -250);");
+        //js.executeScript("window.scroll(0, -250);");
+
+        Select selectSkills = new Select(driver.findElement(By.id("Skills")));
+
+        selectSkills.selectByValue("SQL");
     }
 }

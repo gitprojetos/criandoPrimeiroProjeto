@@ -1,18 +1,22 @@
-import io.netty.channel.epoll.EpollServerChannelConfig;
+package br.com.mentoria.automacao.web;
+
 import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
-import javax.swing.*;
+import java.util.concurrent.TimeUnit;
 
 public class RegisterTest {
 
     @Test
     public void register(){
-        //System .setProperty("chromedriver.driver.chrome", "C:\\DRIVER\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
+       WebDriver driver = new ChromeDriver();
+
+        //Espera implicita
+       driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+
         driver.get("https://demo.automationtesting.in/Register.html");
 
         //Maximizar a tela
@@ -47,7 +51,10 @@ public class RegisterTest {
         WebElement upload =  driver.findElement(By.id("imagesrc"));
         upload.sendKeys("C:\\Users\\user\\Pictures\\imagemjpg.jpg");
 
-        //
+
+        //esppera imnplicita
+
+        //Fecha tudo
         driver.quit();
 
         //Fecha aquela aba que está com foco, que estamos interagindo

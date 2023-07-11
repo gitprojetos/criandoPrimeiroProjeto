@@ -15,6 +15,9 @@ public class RegisterTest {
         WebDriver driver = new ChromeDriver();
         driver.get("https://demo.automationtesting.in/Register.html");
 
+        //Maximizar a tela
+        driver.manage().window().maximize();
+
         driver.findElement(By.xpath("//input[@placeholder='First Name']")).sendKeys("Etech");
         driver.findElement(By.xpath("//input[@placeholder='Last Name']")).sendKeys("Mentoria");
         driver.findElement(By.xpath("//textarea[@ng-model='Adress']")).sendKeys("Teste Endereço");
@@ -24,6 +27,7 @@ public class RegisterTest {
         driver.findElement(By.id("checkbox2")).click();
         driver.findElement(By.id("msdd")).click();
 
+        //Scrolando para baixo
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scroll(0,250);");
 
@@ -42,5 +46,12 @@ public class RegisterTest {
         //Realizando Upload de arquivo
         WebElement upload =  driver.findElement(By.id("imagesrc"));
         upload.sendKeys("C:\\Users\\user\\Pictures\\imagemjpg.jpg");
+
+        //
+        driver.quit();
+
+        //Fecha aquela aba que está com foco, que estamos interagindo
+        //Fecha aquela aba espefica
+        //driver.close();
     }
 }

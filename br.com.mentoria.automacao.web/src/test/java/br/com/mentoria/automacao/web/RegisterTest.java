@@ -36,6 +36,6 @@ public class RegisterTest extends DSL {
         super.clickByXpath("//a[@class='ui-corner-all' and text()='Portuguese']");
         super.selectById("Skills", "SQL");
         super.uploudDeArquivoById("imagesrc", "C:\\Users\\user\\Pictures\\imagemjpg.jpg");
-        super.fecharBrowser(); nnnn 
+        super.fecharBrowser();
     }
 }

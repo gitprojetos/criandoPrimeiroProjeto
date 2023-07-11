@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 public class DSL extends BaseTest {
@@ -86,4 +87,16 @@ public class DSL extends BaseTest {
     public void fecharBrowser(){
         driver.quit();
     }
+
+    /**
+     * Realiza a interação do cursor até o elemento
+     * @param xpath Inserir o xpath do elemento
+     * */
+
+    public void actionByXpath(String xpath){
+        Actions actions = new Actions(driver);
+        WebElement element = driver.findElement(By.xpath(xpath));
+        actions.moveToElement(element).build().perform();
+    }
 }
+ 

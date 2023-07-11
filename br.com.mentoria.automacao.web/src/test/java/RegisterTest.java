@@ -16,5 +16,9 @@ public class RegisterTest {
         driver.findElement(By.xpath("//textarea[@ng-model='Adress']")).sendKeys("Teste Endereço");
         driver.findElement(By.xpath("//input[@type='email']")).sendKeys("tstlinux.c@gmail.com");
         driver.findElement(By.xpath("//input[@type='tel']")).sendKeys("8888888888");
+        driver.findElement(By.xpath("//input[@value='Male']")).click();
+        driver.findElement(By.id("checkbox2")).click();
+        driver.findElement(By.id("msdd")).click();
+        driver.findElement(By.xpath("//a[@class='ui-corner-all' and text()='Portuguese']")).click();
     }
 }

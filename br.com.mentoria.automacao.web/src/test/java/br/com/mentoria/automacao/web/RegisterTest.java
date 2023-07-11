@@ -1,5 +1,6 @@
 package br.com.mentoria.automacao.web;
 
+import br.com.mentoria.automacao.configuracao.BaseTest;
 import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,20 +9,12 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.concurrent.TimeUnit;
 
-public class RegisterTest {
+public class RegisterTest extends BaseTest {
 
     @Test
     public void register(){
-       WebDriver driver = new ChromeDriver();
-
-        //Espera implicita
-       driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
         driver.get("https://demo.automationtesting.in/Register.html");
-
-        //Maximizar a tela
-        driver.manage().window().maximize();
-
         driver.findElement(By.xpath("//input[@placeholder='First Name']")).sendKeys("Etech");
         driver.findElement(By.xpath("//input[@placeholder='Last Name']")).sendKeys("Mentoria");
         driver.findElement(By.xpath("//textarea[@ng-model='Adress']")).sendKeys("Teste Endereço");

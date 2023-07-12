@@ -3,6 +3,7 @@ package br.com.mentoria.automacao.web;
 import commons.DSL;
 import io.opentelemetry.exporter.logging.SystemOutLogRecordExporter;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -48,7 +49,7 @@ public class Switchto extends DSL {
     }
 
     @Test
-    public void interactionAlertCancel(){
+    public void  b  cf(){
         clickByXpath("//a[@style='color: white' and text()='Alerts']");
         iframeById("aswift_2");
         iframeById("ad_iframe");
@@ -57,7 +58,8 @@ public class Switchto extends DSL {
         clickByXpath("//a[@href='#CancelTab']");
         clickByXpath("//button[@class='btn btn-primary']");
         alertCancel();
-        super.driver.findElement(By.xpath("//p[@id='demo']")).getAttribute("innerText");
+        String msg = super.driver.findElement(By.xpath("//p[@id='demo']")).getAttribute("innerText");
+        Assert.assertEquals("You Pressed Cancel", msg);
         
 
     }

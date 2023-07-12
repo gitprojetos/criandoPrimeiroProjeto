@@ -49,7 +49,7 @@ public class Switchto extends DSL {
     }
 
     @Test
-    public void  b  cf(){
+    public void alertCancel(){
         clickByXpath("//a[@style='color: white' and text()='Alerts']");
         iframeById("aswift_2");
         iframeById("ad_iframe");

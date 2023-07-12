@@ -17,7 +17,7 @@ public class RegisterTest extends DSL {
     Faker faker = new Faker(new Locale("pt-BR"));
 
     @Test
-    public void register(){
+    public void register() {
 
         String firstName = faker.name().firstName();
         String lastName = faker.name().lastName();

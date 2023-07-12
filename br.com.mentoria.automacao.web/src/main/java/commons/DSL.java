@@ -12,91 +12,102 @@ public class DSL extends BaseTest {
 
     /**
      * Acessar uma UL
-     * @param url Inserir url desejada
      *
-    * */
-    public void acessarSite(String url){
+     * @param url Inserir url desejada
+     */
+    public void acessarSite(String url) {
         driver.get(url);
     }
 
     /**
-     *Escever em um elemento desejado
+     * Escever em um elemento desejado
+     *
      * @param xpath Insira o elemento xpath
-     * @param text Inserir o texto que deseja escrever
-     *
-     *
+     * @param text  Inserir o texto que deseja escrever
      */
 
-    public void writeByXpath(String xpath, String text){
+    public void writeByXpath(String xpath, String text) {
         driver.findElement(By.xpath(xpath)).sendKeys(text);
     }
 
     /**
-     *  Clicar em um elemento desejado
-     * @param xpath Inserir um xpath no elemento desejado
+     * Clicar em um elemento desejado
      *
+     * @param xpath Inserir um xpath no elemento desejado
      */
-    public void clickByXpath(String xpath){
+    public void clickByXpath(String xpath) {
         driver.findElement(By.xpath(xpath)).click();
     }
 
     /**
-     *  Clicar em um elemento desejado
-     * @param By element para diferentes tipos de locators
+     * Clicar em um elemento desejado
      *
+     * @param By element para diferentes tipos de locators
      */
-    public void  click(By element){
+    public void click(By element) {
         driver.findElement(element).click();
     }
 
-    public void clickId(String id){
+    public void clickId(String id) {
         driver.findElement(By.id(id)).click();
     }
 
     /**
-     *  Selecionar uma opção a aprtirde um select
-     * @param id Isnerir o id do elemento
-     * @param value Inserir a value desejada
+     * Selecionar uma opção a aprtirde um select
      *
+     * @param id    Isnerir o id do elemento
+     * @param value Inserir a value desejada
      */
-    public void selectById(String id, String value){
+    public void selectById(String id, String value) {
         Select select = new Select(driver.findElement(By.id(id)));
         select.selectByValue(value);
     }
 
     /**
-     *  Scroll com JavascriptExecutor js = (JavascriptExecutor) driver;
+     * Scroll com JavascriptExecutor js = (JavascriptExecutor) driver;
+     *
      * @param
      */
 
-    public void scrollParaBaixoBuyXpath(){
+    public void scrollParaBaixoBuyXpath() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scroll(0,250);");
     }
 
-    public void scrollParaCimaBuyXpath(){
+    public void scrollParaCimaBuyXpath() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scroll(0,-250);");
     }
 
-    public void uploudDeArquivoById(String id, String caminhoDoArquivo){
-        WebElement upload =  driver.findElement(By.id(id));
+    public void uploudDeArquivoById(String id, String caminhoDoArquivo) {
+        WebElement upload = driver.findElement(By.id(id));
         upload.sendKeys(caminhoDoArquivo);
     }
 
-    public void fecharBrowser(){
+    public void fecharBrowser() {
         driver.quit();
     }
 
     /**
      * Realiza a interação do cursor até o elemento
+     *
      * @param xpath Inserir o xpath do elemento
-     * */
+     */
 
-    public void actionByXpath(String xpath){
+    public void actionByXpath(String xpath) {
         Actions actions = new Actions(driver);
         WebElement element = driver.findElement(By.xpath(xpath));
         actions.moveToElement(element).build().perform();
+    }
+
+    /**
+     * Alterar para um iframe
+     *
+     * @param id Inserir o id do iframe
+     */
+
+    public void iframeById(String id) {
+        driver.switchTo().frame(id);
     }
 }
  

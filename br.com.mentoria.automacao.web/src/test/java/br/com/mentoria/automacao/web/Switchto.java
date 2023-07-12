@@ -2,13 +2,22 @@ package br.com.mentoria.automacao.web;
 
 import commons.DSL;
 import org.junit.Test;
-import org.openqa.selenium.interactions.Actions;
 
-public class Switchto extends DSL{
+public class Switchto extends DSL {
     @Test
-    public void actionBySwitchTo(){
-        super.acessarSite("https://demo.automationtesting.in/Register.html");
-        super.actionByXpath("//a[@class='dropdown-toggle' and text()='SwitchTo']");
-        super.clickByXpath("//a[@style='color: white' and text()='Frames']");
+    public void actionBySwitchTo() {
+        acessarSite("https://demo.automationtesting.in/Register.html");
+        actionByXpath("//a[@class='dropdown-toggle' and text()='SwitchTo']");
+        clickByXpath("//a[@style='color: white' and text()='Frames']");
+        fecharBrowser();
+    }
+
+    @Test
+    public void iframeTest() {
+        acessarSite("https://demo.automationtesting.in/Register.html");
+        actionByXpath("//a[@class='dropdown-toggle' and text()='SwitchTo']");
+        clickByXpath("//a[@style='color: white' and text()='Frames']");
+        clickByXpath("//a[@style='color: white' and text()='Frames']");
+        fecharBrowser();
     }
 }

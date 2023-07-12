@@ -123,5 +123,16 @@ public class DSL extends BaseTest {
     public void quitFrame(){
         driver.switchTo().defaultContent();
     }
+
+    public void alertAccept(){
+        driver.switchTo().alert().accept();
+    }
+
+    public void alertCancel(){
+        driver.switchTo().alert().dismiss();
+    }
+    public void alertSendkess(String msg){
+        driver.switchTo().alert().sendKeys(msg);
+    }
 }
  

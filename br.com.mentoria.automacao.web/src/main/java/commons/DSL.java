@@ -109,5 +109,19 @@ public class DSL extends BaseTest {
     public void iframeById(String id) {
         driver.switchTo().frame(id);
     }
+
+    /**
+     * Alterar para um multiple frame
+     *
+     * @param xpath Inserir o id do iframe
+     */
+
+    public void iframeByXpath(String xpath) {
+        driver.switchTo().frame(driver.findElement(By.xpath(xpath)));
+    }
+
+    public void quitFrame(){
+        driver.switchTo().defaultContent();
+    }
 }
  
